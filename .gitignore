@@ -1,5 +1,994 @@
-# Object file
-*.o
+<!DOCTYPE html>
+<html lang="en">
 
-# Ada Library Information
-*.ali
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+     <link rel="stylesheet" href="https://stackoverflow.com/questions/19350291/use-font-awesome-icon-in-placeholder">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+body {
+    background: #f8f8dc;
+}
+header{
+    position: fixed;
+    background-color: rgb(167, 168, 153);
+    opacity: .6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 999;
+    transition: .5s ease; 
+   
+}
+header.sticky {
+    background: crimson;
+    
+}
+header .brand {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+header .navigation {
+    position: relative;
+
+}
+header .navigation a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+}
+header .navigation a:hover {
+    color: coral;
+    transition: 0.5s ease;
+}
+section {
+    padding: 100px;
+}
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(./img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.main .content {
+    max-width: 800px;
+}
+.main .content h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+}
+.main .content span {
+    font-size: 60px;
+    font-weight: 600;
+}
+.animated-text {
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+}
+.animated-text h3 {
+ color: #dc143c;
+ font-size: 52px;
+ font-weight: 700px;
+ line-height: 70px;
+}
+.animated-text h3:nth-child(1) {
+    animation: text-move 10s infinite;
+}
+@keyframes text-move {
+    0% {
+        margin-top:0;
+    }
+    25% {
+        margin-top: -70px;
+    }
+    50% {
+        margin-top: -140px;
+    }
+    75% {
+        margin-top: -70px;
+    }
+    100%{
+        margin-top: 0;
+    }
+
+}
+.btn {
+    color: #FFF;
+    background: crimson;
+    font-size: 17px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    margin-top: 30px;
+    transition: .5s ease;
+}
+.btn:hover {
+    background: #fff;
+    color: black;
+}
+.media-icons a{
+    color: #fff;
+    font-size: 25px;
+    margin-left: 30px;
+}
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section-title {
+    position: relative;
+    color: crimson;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    width: 200px;
+    height: 4px;
+    background: crimson;
+    transform: translateX(-50%);
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: crimson;
+    transform: translateX(-50%);
+}
+
+.about .content {
+ position: relative;
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ margin-top: 20px;
+}
+
+.about .content .col-left {
+    position: relative;
+    width: 45%;
+}
+.about .content .col-right {
+    position: relative;
+    width: 45%;
+}
+.about .content .img-card {
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+
+}
+.about .content .img-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.about .content-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.skills {
+    background: #000016;
+}
+.skills .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    margin-top: 20px;
+}
+.skills .col-left{
+    position: relative;
+    width: 45%;
+}
+.skills .col-left .content-title{
+    margin-bottom: 20px;
+}
+.skills .col-right {
+position: relative;
+width: 45%;
+}
+.skills .col-right .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.skills .col-right .bar .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.skills .col-right span {
+    font-size: 18px;
+    font-weight: 500;
+}
+.skills .line {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background: #ccc;
+    border-radius: 6px;
+}
+.skills .line:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+}
+.skills  .html:before {
+    width: 90%;
+    background: #e45126;
+}
+.skills  .css:before {
+    width: 85%;
+    background: #0c73bb;
+}
+.skills  .bootstrap:before {
+    width: 70%;
+    background: #e3a324;
+}
+.skills  .javascript:before {
+    width: 65%;
+    background: #30dd6d;
+}
+.skills  .jquery:before {
+    width: 30%;
+    background: #6d7eb8;
+}
+.skills  .php:before {
+    width: 5%;
+    background: lightyellow;
+}
+.servises .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.title p {
+    width: 80%;
+}
+.servises .content .card {
+    background: #fff;
+    width: 300px;
+    margin: 10px;  
+    padding:25px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+    border-radius: 15px;
+    transition: transform .5s linear;
+}
+.servises .card .servise-img:hover {
+transform: translateY(-15px);
+}
+.servises .card .info {
+    text-align: center;
+}
+.servises .card .info h3 {
+    color: crimson;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px;
+}
+.sertificate {
+    background: #000016;
+}
+.sertificate .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.sertificate .content .card {
+    width: 340px;
+    margin: 20px;
+}
+.sertificate .content .card-img  {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+   
+}
+.sertificate .content .card-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .5s ease;
+
+}
+.sertificate .content .card-img img:hover{
+    transform: scale(1.2);
+}
+.contact .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.contact .content .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.contact .row .card {
+    background: #fff;
+    width: 240PX;
+    margin: 20px;
+    padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+        border-radius: 15px;
+}
+.contact .card .contact-icon   {
+    color: crimson;
+    font-size: 60px;
+    text-align: center;
+    transition: transform 1s ease;
+}
+.contact .card:hover  .contact-icon{
+    transform: translateY(-25px);
+}
+.content .card .info h3{
+    color: #111;
+    font-size: 20px;
+    font-weight: 700px;
+    margin: 10px;
+}
+.content .card .info span {
+    color: #666;
+    font-weight: 500;
+}
+.contact-form  {
+    background: #fff;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+}
+.contact-form h3 {
+    color: #111;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.contact-form .input-box{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20PX;
+}
+.contact-form .input-box input
+ ,.contact-form .input-box textarea {
+   color: #111;
+   width: 100%;
+   padding: 10px;
+   font-size: 17px;
+   font-weight: 400;
+   outline: none;
+   border: 1px solid #111;
+   border-radius: 5px;
+   resize: none;
+
+}
+.contact-form .input-box .send-btn {
+    color: #fff;
+    background: crimson;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+.contact-form .input-box .send-btn:hover {
+background: #fff;
+color: #000;
+border: solid 3px black;
+}
+.footer {
+    background: #000016;
+    color: #fff;
+    text-align: center;
+    padding: 34px;
+}
+.footer .footer-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.footer p {
+    margin-top: 10px;
+}
+@media(max-width:1049px) {
+    header {
+        padding: 12px 20px;
+    }
+    header .brand{
+        font-size: 28px;
+    }
+    header .navigation{
+        display: none;
+    }
+    header .navigation a {
+        color: #111;
+        font-size: 22px;
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+    header .navigation a:hover{
+        background: crimson;
+        color: #fff;
+    }
+    header .navigation.active{
+        z-index: 888;
+        position: fixed;
+        background: #fff;
+        top: 0;
+        right: 0;
+        width: 380px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+        transition: .6s ease;
+
+    }
+    .menu-btn {
+        position: absolute;
+        background:url(./img/IMG_0065.PNG) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        right: 0;
+        margin: 0 20px;
+        cursor: pointer;
+
+    }
+    .menu-btn.active{
+        z-index: 999;
+        background: url(./img/IMG_0066.PNG) no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: .6s ease;
+    }
+    section{
+        padding: 80px 20px;
+    }
+    .main .content h2 , .main .content h2 span{
+     font-size: 25px;
+    }
+    .main .content h3{
+     font-size: 35px;
+    }
+    .section-title {
+        font-size: 25px;
+    }
+    .about .content {
+        flex-direction: column;
+    }
+    .about .content .column {
+        position: relative;
+        width: 100%;
+    }
+    .about .content .col-right{
+        margin-top: 30px;
+    }
+    .skills .content{
+        flex-direction: column;
+    }
+    .skills .content .column {
+        position: relative;
+        width: 100%;
+    }
+    .skills .content .col-right{
+        margin-top: 20px;
+    }
+    .contact-form{
+        padding: 15px 20px;
+       
+    }
+}
+@media(max-width:600px) {
+    
+    header {
+        padding: 6px 12px;
+    }
+    header .brand{
+        font-size: 23px;
+        margin: 5px;
+        padding: 5px;
+    }
+    header .navigation{
+        display: none;
+    }
+    .menu-btn {
+        position: absolute;
+        background:url(./img/IMG_0065.PNG) no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        right: 0;
+        margin: 0 20px;
+        cursor: pointer;
+
+    }
+    section{
+        padding: 30px 15px;
+    }
+    .main .content h2,.main .content h2 span{
+     font-size: 25px;
+    }
+    .main .content h3{
+     font-size: 30px;
+    }
+    .section-title {
+        font-size: 25px;
+    }
+    .about .content {
+        flex-direction: column;
+    }
+    .about .content .column {
+        position: relative;
+        width: 100%;
+    }
+    .about .content .col-right{
+        margin-top: 30px;
+    }
+    .skills .content{
+        flex-direction: column;
+    }
+    .skills .content .column {
+        position: relative;
+        width: 100%;
+    }
+    .skills .content .col-right{
+        margin-top: 20px;
+    }
+    .contact-form{
+        padding: 15px 20px;
+       
+    }
+    .sertificate .content .card{
+        width: 140px;
+        margin: 10px;
+    }
+
+    .sertificate .content .card-img {
+      height: 120px;
+    }
+    .contact .row .card {
+        width: 140px;
+        margin: 10px;
+        padding: 10px;
+    }
+}
+.scrollToTop-btn {
+    z-index: 999;
+    position: fixed;
+    background: crimson;
+    color: #fff;
+    width: 45px;
+    right: 0;
+    height: 45px;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 45px;
+    border: 3px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.scrollToTop-btn.active{
+    right: 20px;
+    opacity: 1;
+}
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all .6s linear;
+}
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}</style>
+    <link rel="stylesheet" href="./fontawesome-free-5.15.1-web/css/all.css">
+</head>
+
+<body>
+    <div class="scrollToTop-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <header>
+        <a href="#" class="brand">Mening Portfolioim</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <a href="#main">Bosh saxifa</a>
+            <a href="#about">Men Xaqimda</a>
+            <a href="#skills">Tajribam</a>
+            <a href="#servises">Xizmatlar</a>
+            <a href="#sertificate">Seritifikatlarim</a>
+            <a href="#contact">Bog'lanish</a>
+
+        </div>
+    </header>
+  
+    <section class="main" id="main">
+        <div class="content">
+            <h2>Assalomu alaykum men<br> <span>Karimov Haydarali</span> <br></h2>
+            <div class="animated-text">
+                <h3>Web</h3>
+                <h3>Frontend</h3>
+                <h3>Developer</h3>
+            </div>
+            <a href="#" class="btn"> Biz haqimizda</a>
+            <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+              
+
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="title reveal">
+            <div class="section-title">Men haqimda</div>
+        </div>
+        <div class="content">
+            <div class="column col-left reveal">
+                <div class="img-card">
+                    <img src="./img/IMG_0054.PNG" alt="">
+                </div>
+            </div>
+            <div class="column col-right">
+                <h2 class="content-title">Assalomu alaykum hammaga! Men Karimov Haydarali!</h2>
+                <div class="paragraph-text">
+                    <p>Assalomu Alaykum Mening Portfolio Web sahifamga xush kelibsiz!
+                    </p>
+                    <p>Men Karimov Haydarali Farg'ona viloyati Toshloq tumanida istiqomat qilaman, hozirda 25 yoshdaman.
+                    </p>
+                    <h4 class="title">Malumotim</h4>
+                    <p><strong>Umumiy o'rta ta'lim:</strong> Toshloq tumani 41-maktab !</p>
+                    <p><strong>O'rta Maxsus:</strong> Marg'ilon Akademik Litseyi ! </p>
+                    <p><strong>Oliy:</strong> Andijon Qishloq Xo'jaligi va Agrotexnologiyalar Instituti !</p>
+                    <h4 class="title">Ish Tajribam</h4>
+                    <p><strong>Elite Stones MCHJ: </strong> Oddiy ishchi</p>
+                    <p><strong>Dominant ATM: </strong>Mental Arifmetika O'qituvchisi</p>
+                    <p><strong>Liderlar NTM: </strong>Kubik rubik o'rgatuvchi(CubeMaster)</p>
+                    <a href="#" class="btn">Ko'proq o'qish!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="title reveal">
+            <div class="section-title">Mening tajribam</div>
+        </div>
+        <div class="content">
+            <div class="column col-left reveal">
+                <h2 class="content-title">Mening ish tajribam</h2>
+                <p>Men Dasturlash soxasining Frontend soxasida faoliyat yuritaman. Men bu soxani Bir Milion Uzbek Coders
+                    dasturi orqali UDACITY platformasida
+                    hamda SOLOLEARN online platformasida berilgan darslarni o'zlashtirib o'rgandim. Bundan tashqari
+                    olgan bilimlarimni YouTube Tarmog'idagi
+                    Tajribali dasturchilarning Videodarslari bilan mustahkamladim! ular <br><Strong>HTML:</Strong>
+                    <b>Saidbek Arislonov</b> <br><Strong>CSS:</Strong> <b>Saidbek Arislonov</b><br>
+                    <Strong>BOOTSTRAP:</Strong> <b>Dilshod Mirsoatov</b><br>
+                    <Strong>JavaScript:</Strong> <b>Farxod Dadajonov, Dilshod Mirsoatov, Samar Badriddinov !</b><br>
+                    <Strong>jQuery:</Strong> <b>Dilshod Mirsoatov</b>
+
+                </p>
+                <a href="#" class="btn"> Ko'proq </a>
+            </div>
+            <div class="column col-right reveal">
+                <div class="bar">
+                    <div class="info">
+                        <span>HTML</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="line html"></div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span>CSS</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="line css"></div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span>Bootstrap</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="line bootstrap"></div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span>JavaScript</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="line javascript"></div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span>jQuery</span>
+                        <span>30%</span>
+                    </div>
+                    <div class="line jquery"></div>
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span>PHP</span>
+                        <span>5%</span>
+                    </div>
+                    <div class="line php"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="servises" id="servises">
+        <div class="title reveal">
+            <div class="section-title">Xizmatlar</div>
+            <p class="title">Men sizlarga O'z xizmatlarimni mamnuniyat ila taklif qilaman!</p>
+        </div>
+        <div class="content">
+            <div class="card reveal">
+                <div class="servise-img">
+                    <img src="./img/IMG_0059.JPG" alt="">
+                </div>
+                <div class="info">
+                    <h3>Web sayt Yasash </h3>
+                    <p>Texnik vazifalar asosida sifatli web sahifa yasash va uni Xostinnga joylash !</p>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="servise-img">
+                    <img src="./img/IMG_0060.PNG" alt="">
+                </div>
+                <div class="info">
+                    <h3>Responsive Verstka</h3>
+                    <p>Barcha qurilmalarga moslasha oladigan Web sahifa yasah va uni hostinnga joylash !</p>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="servise-img">
+                    <img src="./img/IMG_0064.JPG" alt="">
+                </div>
+                <div class="info">
+                    <h3>Web saytni o'zgartirish</h3>
+                    <p>Tayyor va kamchiliklari bor web sahifani kamchiliklarini ko'rib chiqish va kamchiliklarini tuzatib soz holatga kektirish !</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sertificate" id="sertificate">
+        <div class="title reveal">
+            <div class="section-title">Mening sertifikatlarim</div>
+        </div>
+        <div class="content">
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (22).png" alt="">
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (23).png" alt="">
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (27).png" alt="">
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (28).png" alt="">
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (29).png" alt="">
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="./img/Screenshot (30).png" alt="">
+                </div>
+            </div>
+            <div class="title reveal">
+                <a href="#" class="btn">Hammasini ko'rish</a>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="title reveal">
+            <div class="section-title">Bog'lanish</div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info">
+                        <h4>MANZIL</h4>
+                        <span>Farg'ona iloyati Toshloq tumani </span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info">
+                        <h4>Tel Raqam</h4>
+                        <span>+998 91 494 29 67</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info">
+                        <h4>E-Pochta</h4>
+                        <span>khfrontend <br> @gmail.com</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="info">
+                        <h4>Website</h4>
+                        <span>KHFrontendDeve<br> loper.netlify.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="contact-form reveal">
+                    <h3>Habar Yuborish</h3>
+                    <div class="input-box">
+                        <input type="text" placeholder="Ism">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Familya">
+                    </div>
+                    <div class="input-box">
+                        <textarea id="" cols="80" rows="8" placeholder="Matnni bu yerga kiriting"></textarea>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="send-btn" value="send">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <span class="footer-title">Haydarali Karimov </span>
+        <p>Copyright &copy; 2021 All Rights Peserved</p>
+    </footer>
+
+
+    <script>
+    window.addEventListener('DOMContentLoaded',function(){
+    window.addEventListener('scroll',function(){
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky',window.scrollY > 0)
+    })
+
+const menuBtn = document.querySelector('.menu-btn')
+const navigation =document.querySelector('.navigation')
+
+menuBtn.addEventListener('click',() => {
+    menuBtn.classList.toggle('active')
+    navigation.classList.toggle('active')
+})
+const navigationItems = document.querySelectorAll('.navigation a')
+navigationItems.forEach(navItem => {
+    navItem.addEventListener('click', () =>{
+        menuBtn.classList.remove('active')
+        navigation.classList.remove('active')
+    })
+  })
+  const scrollBtn = document.querySelector('.scrollToTop-btn')
+  window.addEventListener('scroll',() => {
+      scrollBtn.classList.toggle('active', window.scrollY > 500)
+  })
+  scrollBtn.addEventListener('click', () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  })
+  window.addEventListener('scroll', () => {
+      let reveals = document.querySelectorAll('.reveal')
+
+      for (let i = 0; i < reveals.length; i++) {
+          let windowHeight = window.innerHeight;
+          let revealTop = reveals[i].getBoundingClientRect().top;
+          let revealPoint = 50;
+
+          if (revealTop < windowHeight - revealPoint){
+              reveals[i].classList.add('active')
+          }
+      }
+  })
+})
+    </script>
+</body>
+
+</html>
